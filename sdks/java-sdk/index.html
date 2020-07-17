@@ -1,0 +1,1020 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Amadeus for Developers Documentation">
+      
+      
+        <link rel="canonical" href="https://developers.amadeus.com/sdks/java-sdk/">
+      
+      
+        <meta name="author" content="Amadeus for Developers">
+      
+      <link rel="shortcut icon" href="../../icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Java SDK - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.18c0a40a.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.1c8a562c.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amadeus:300,400,400i,700%7CSource+Sans+Pro&display=fallback">
+        <style>body,input{font-family:"Amadeus",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Source Sans Pro",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/amadeus.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-sdk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    <div class="md-container" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://developers.amadeus.com" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/amadeus4dev/developer-guides/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amadeus4dev/developer-guides
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/first-api-call/" title="Making your first API call" class="md-nav__link">
+      Making your first API call
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/self-service-enterprise/" title="Self-Service vs Enterprise" class="md-nav__link">
+      Self-Service vs Enterprise
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/moving-to-production/" title="Moving to Production" class="md-nav__link">
+      Moving to Production
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API Guides
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="API Guides" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        API Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/authorization/" title="Authorization" class="md-nav__link">
+      Authorization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/permissions-and-errors/" title="Permissions and errors" class="md-nav__link">
+      Permissions and errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/pagination/" title="Pagination" class="md-nav__link">
+      Pagination
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/api-rate-limits/" title="Rate Limits" class="md-nav__link">
+      Rate Limits
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/api-data-collection/" title="Data Collection" class="md-nav__link">
+      Data Collection
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      API Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="API Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        API Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/flights/" title="Flights" class="md-nav__link">
+      Flights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/hotels/" title="Hotels" class="md-nav__link">
+      Hotels
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/locations/" title="Locations" class="md-nav__link">
+      Locations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/predictions/" title="Predictions" class="md-nav__link">
+      Predictions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Tooling
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tooling" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tooling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node-sdk/" title="Node SDK" class="md-nav__link">
+      Node SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-sdk/" title="Python SDK" class="md-nav__link">
+      Python SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Java SDK
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Java SDK" class="md-nav__link md-nav__link--active">
+      Java SDK
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#openjdk-oracle-jdk-help" class="md-nav__link">
+    OpenJDK? Oracle JDK? help!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-environment" class="md-nav__link">
+    Setting up the environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up the environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-jdk-installation" class="md-nav__link">
+    Java JDK Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Java JDK Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-windows" class="md-nav__link">
+    Linux / Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle_1" class="md-nav__link">
+    Gradle
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-example" class="md-nav__link">
+    Step-by-step example
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-amadeus-java-sdk" class="md-nav__link">
+    Using the Amadeus Java SDK
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#openjdk-oracle-jdk-help" class="md-nav__link">
+    OpenJDK? Oracle JDK? help!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-environment" class="md-nav__link">
+    Setting up the environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up the environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-jdk-installation" class="md-nav__link">
+    Java JDK Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Java JDK Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-windows" class="md-nav__link">
+    Linux / Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle_1" class="md-nav__link">
+    Gradle
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-example" class="md-nav__link">
+    Step-by-step example
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-amadeus-java-sdk" class="md-nav__link">
+    Using the Amadeus Java SDK
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/amadeus4dev/developer-guides/edit/master/docs/sdks/java-sdk.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="java-sdk">Java SDK</h1>
+<p>Java usually refers to the programming language but also to the platform: a set
+of tools -virtual machine, compiler and libraries- which allow developers to
+create cross-platform applications.</p>
+<h2 id="openjdk-oracle-jdk-help">OpenJDK? Oracle JDK? help!</h2>
+<p>Despite the complexity of the Java ecosystem, it's important to understand that there is only one set of source code for the JDK released under GPL license and hosted at <a href="http://openjdk.java.net/projects/jdk/">OpenJDK</a>. You can always follow <a href="http://hg.openjdk.java.net/jdk9/jdk9/raw-file/tip/common/doc/building.html">these instructions</a> to compile and generate your own JDK flavor.</p>
+<p>Different vendors build the OpenJDK adding additional tools, utilities or branding elements, but never modifying the language. As result the vendor provides a new build with some unique vendor capabilities or certification processes.</p>
+<p>There are many JDK implementations out there, but the most used ones are:</p>
+<ul>
+<li><a href="http://jdk.java.net/">OpenJDK</a>. Oracle GPL license unbranded builds of the OpenJDK.</li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/">Oracle JDK</a>. Branded builds from Oracle that could be used without cost.</li>
+</ul>
+<p>There are more implementations like <a href="https://www.azul.com/downloads/zulu/">Zulu</a>, <a href="https://developer.ibm.com/javasdk/support/lifecycle/">IBM JDK</a>, <a href="https://developers.redhat.com/products/openjdk/overview/">Red Hat</a> or <a href="https://adoptopenjdk.net/">AdoptOpenJDK</a>.</p>
+<p>If you want to switch seamessly between flavors and versions, we recommend you to take a look to the  <a href="https://sdkman.io/">sdkman</a> tool.</p>
+<h2 id="installation">Installation</h2>
+<p>The SDK can be installed by adding a <code>Gradle</code> dependency or <code>Maven</code> dependency, or by cloning the source into a project. Additionally it can be installed by downloading one of the precompiled JARs from the releases page on <a href="https://github.com/amadeus4dev/amadeus-java">GitHub</a>.</p>
+<h3 id="maven">Maven</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.amadeus<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>amadeus-java<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>3.3.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+
+<h3 id="gradle">Gradle</h3>
+<div class="highlight"><pre><span></span><code><span class="n">compile</span> <span class="s">&quot;com.amadeus:amadeus-java:3.3.0&quot;</span>
+</code></pre></div>
+
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<h3 id="java-jdk-installation">Java JDK Installation</h3>
+<h4 id="linux-windows">Linux / Windows</h4>
+<p>Go to <a href="https://adoptopenjdk.net/">AdoptOpenJDK website</a> and download the tarball (Version 8 at the time of writting this).</p>
+<p>Make sure the new Java installation is the default Java in your system:</p>
+<ul>
+<li>Extract the <code>.tar.gz</code>.</li>
+<li>Add <code>bin</code> directory to your PATH environment.</li>
+<li>Export a new <code>JAVA_HOME</code> environment variable pointing to the directory where Java has been installed.</li>
+<li>Check that Java has installed correctly</li>
+</ul>
+<div class="highlight"><pre><span></span><code>java -version
+</code></pre></div>
+
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>On Linux, use <code>update-alternatives --config java</code> whenever is possible.</p>
+</div>
+<h4 id="macos">macOS</h4>
+<p>We recommend to use <strong>brew</strong> if possible. If you haven't installed brew already <a href="http://brew.sh/">install it!</a>  Then install <strong>Java</strong> as follows:</p>
+<div class="highlight"><pre><span></span><code>brew cask uninstall java
+brew tap adoptopenjdk/openjdk
+brew cask install adoptopenjdk8
+</code></pre></div>
+
+<h3 id="gradle_1">Gradle</h3>
+<p>Managing a Java project and its dependencies manually could be an exhausting task if you don't use the proper tools or IDEs (Eclipse, NetBeans, IntelliJ...). This tutorial is meant to be followed using command line. This will give us a better understanding about what's going on beneath any IDE.</p>
+<p>There are several tools which makes us life eaiser. The most interesting ones are <a href="https://gradle.org/">Gradle</a> and <a href="https://maven.apache.org/">maven</a>.</p>
+<p>Although our <a href="https://github.com/amadeus4dev/amadeus-java">Java SDK</a> supports both <code>Gradle</code> and <code>maven</code>, for our example we are going to use <code>Gradle</code>. Let's see how it works.</p>
+<h4 id="installation_1">Installation</h4>
+<p>Go ahead and install Gradle following the <a href="https://gradle.org/install/">instructions</a> from the website. Make sure the <code>gradle</code> tool belongs to your <code>PATH</code> variable.</p>
+<p>To test the Gradle installation, run <code>gradle</code> from the command line:</p>
+<div class="highlight"><pre><span></span><code>gradle
+
+Welcome to Gradle 4.10.2!
+
+Here are the highlights of this release:
+ - Incremental Java compilation by default
+ - Periodic Gradle caches cleanup
+ - Gradle Kotlin DSL 1.0-RC6
+ - Nested included builds
+ - SNAPSHOT plugin versions in the `plugins {}` block
+
+For more details see https://docs.gradle.org/4.10.2/release-notes.html
+</code></pre></div>
+
+<h2 id="step-by-step-example">Step-by-step example</h2>
+<p>This tutorial will guide you through the process of creating a simple Java
+application which calls the Flight Inspiration Search API using the Amadeus
+for Developers Java SDK</p>
+<h3 id="using-the-amadeus-java-sdk">Using the Amadeus Java SDK</h3>
+<p>For this tutorial we will use Unix-based commands. Windows has similar commands for each.</p>
+<p>The requirements to follow this tutorial are the following:</p>
+<ul>
+<li>Your favorite editor</li>
+<li>Java correctly installed (see previous section)</li>
+<li>gradle</li>
+<li>Amadeus for Developers API key</li>
+</ul>
+<p>Let's do something cool by calling one of our <a href="https://developers.amadeus.com">Flight Search APIs</a> from your Java code.</p>
+<p>Let's start by creating a new folder <code>AmadeusTest</code> on your <code>$HOME</code> directory. Switch to this new folder and create a subdirectory structure that will host our project:</p>
+<div class="highlight"><pre><span></span><code>mkdir -p src/main/java/flightsearch
+</code></pre></div>
+
+<p>Create a new file called <code>FlightSearch.java</code> inside <code>src/main/java/flightsearch</code> with the following content:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">flightsearch</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FlightSearch</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Go back to the root folder <code>AmadeusTest</code> and initialize your project using <code>gradle</code>:</p>
+<div class="highlight"><pre><span></span><code>gradle init
+</code></pre></div>
+
+<p>You'll notice a few new files in your root folder. You can freely add them to your version control system so everyone can build it just the same way.</p>
+<p>Edit the <code>build.gradle</code> file with your favorite editor and add:</p>
+<div class="highlight"><pre><span></span><code><span class="n">apply</span> <span class="n">plugin</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">java</span><span class="err">&#39;</span>
+<span class="n">apply</span> <span class="n">plugin</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">application</span><span class="err">&#39;</span>
+
+<span class="n">mainClassName</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">flightsearch</span><span class="p">.</span><span class="na">FlightSearch</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Note that <code>mainClassName</code> must be fully qualified class name.</p>
+</blockquote>
+<p>Let's build and run the source using the <code>gradlew</code> wrapper script that <code>Gradle</code> has just created:</p>
+<div class="highlight"><pre><span></span><code>./gradlew run
+
+&gt; Task :run
+Hello World
+
+BUILD SUCCESSFUL in 2s
+<span class="m">2</span> actionable tasks: <span class="m">2</span> executed
+</code></pre></div>
+
+<p>The <code>run</code> argument is a task. Each project includes a collection of tasks, each of which performs a basic operation. <code>Gradle</code> comes with a set of predefined tasks that could be extended using an API. Managing tasks is out of the scope of this tutorial, but you can find more information about how to extend and configure tasks on <a href="https://guides.gradle.org/">Gradle documentation</a>.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>Note that a new folder <code>build/libs</code> has been created containing the <code>jar</code> file of your project.</p>
+</div>
+<p>Now that we have our skeleton ready, let's extend it to implement a call to the <a href="https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search">Flight Inspiration Search API</a>.</p>
+<p>According to the <a href="https://github.com/amadeus4dev/amadeus-java">Java SDK</a> documentation, we need to update our <code>build.gradle</code> file to include the following dependencies:</p>
+<div class="highlight"><pre><span></span><code><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">code</span><span class="p">.</span><span class="na">gson</span><span class="p">:</span><span class="n">gson</span><span class="p">:</span><span class="mf">2.8.5</span><span class="err">&#39;</span>
+<span class="n">compile</span> <span class="s">&quot;com.amadeus:amadeus-java:3.3.0&quot;</span>
+</code></pre></div>
+
+<p>Our <code>build.gradle</code> will look like:</p>
+<div class="highlight"><pre><span></span><code><span class="n">apply</span> <span class="n">plugin</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">java</span><span class="err">&#39;</span>
+<span class="n">apply</span> <span class="n">plugin</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">application</span><span class="err">&#39;</span>
+
+<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>
+<span class="n">targetCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="p">.</span><span class="na">google</span><span class="p">.</span><span class="na">code</span><span class="p">.</span><span class="na">gson</span><span class="p">:</span><span class="n">gson</span><span class="p">:</span><span class="mf">2.8.5</span><span class="err">&#39;</span>
+    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="p">.</span><span class="na">amadeus</span><span class="p">:</span><span class="n">amadeus</span><span class="o">-</span><span class="n">java</span><span class="p">:</span><span class="mf">3.3.0</span><span class="err">&#39;</span>
+<span class="p">}</span>
+
+<span class="n">repositories</span> <span class="p">{</span> <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="s">&quot;https://jcenter.bintray.com&quot;</span> <span class="p">}</span> <span class="p">}</span>
+
+<span class="n">jar</span> <span class="p">{</span>
+    <span class="n">baseName</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">flightSearch</span><span class="err">&#39;</span>
+    <span class="n">version</span> <span class="o">=</span>  <span class="err">&#39;</span><span class="mf">0.1.0</span><span class="err">&#39;</span>
+<span class="p">}</span>
+
+<span class="n">mainClassName</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">flightsearch</span><span class="p">.</span><span class="na">FlightSearch</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<p>Note that we have added <code>repositories</code> section in order to retrieve the jar files automatically during the <code>build</code> task.</p>
+<p>It's time to call the APIs from our Java sample! Edit the <code>FlightSearch.java</code> file and add the necessary imports:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">com.amadeus.Amadeus</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.Params</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.exceptions.ResponseException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.shopping.FlightDestinations</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.resources.FlightDestination</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Add the SDK initialization right after the <code>main</code> class replacing "<em>CLIENT_ID</em>" and "<em>CLIENT_SECRET</em>" with the real values of your <code>client id</code> and <code>client secret</code>:</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">Amadeus</span> <span class="n">amadeus</span> <span class="o">=</span> <span class="n">Amadeus</span>
+            <span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;CLIENT_ID&quot;</span><span class="p">,</span><span class="s">&quot;CLIENT_SECRET&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+
+<p>Finally call the API and print out the first result of the . This call will retrieve the best offers departuring from Madrid as of today. See how the <code>get</code> method of <code>flightDestinations</code> object returns a list of <code>FlightDestination</code> objects:</p>
+<div class="highlight"><pre><span></span><code><span class="n">FlightDestination</span><span class="o">[]</span> <span class="n">flightDestinations</span> <span class="o">=</span> <span class="n">amadeus</span><span class="p">.</span><span class="na">shopping</span><span class="p">.</span><span class="na">flightDestinations</span><span class="p">.</span><span class="na">get</span><span class="p">(</span>
+                                                      <span class="n">Params</span><span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="s">&quot;origin&quot;</span><span class="p">,</span> <span class="s">&quot;MAD&quot;</span><span class="p">)</span>
+                                                     <span class="p">);</span>
+</code></pre></div>
+
+<p>The complete sample file looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">com.amadeus.Amadeus</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.Params</span><span class="p">;</span>
+<span class="hll">
+</span><span class="hll"><span class="kn">import</span> <span class="nn">com.amadeus.exceptions.ResponseException</span><span class="p">;</span>
+</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.shopping.FlightDestinations</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.amadeus.resources.FlightDestination</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FlightSearch</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">ResponseException</span> <span class="p">{</span>
+    <span class="n">Amadeus</span> <span class="n">amadeus</span> <span class="o">=</span> <span class="n">Amadeus</span>
+            <span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;CLIENT_ID&quot;</span><span class="p">,</span><span class="s">&quot;CLIENT_SECRET&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+    <span class="n">FlightDestination</span><span class="o">[]</span> <span class="n">flightDestinations</span> <span class="o">=</span> <span class="n">amadeus</span><span class="p">.</span><span class="na">shopping</span><span class="p">.</span><span class="na">flightDestinations</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">Params</span><span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="s">&quot;origin&quot;</span><span class="p">,</span> <span class="s">&quot;MAD&quot;</span><span class="p">));</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">flightDestinations</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">getResponse</span><span class="p">().</span><span class="na">getStatusCode</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Wrong status code for Flight Inspiration Search: &quot;</span> <span class="o">+</span> <span class="n">flightDestinations</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">getResponse</span><span class="p">().</span><span class="na">getStatusCode</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">flightDestinations</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Let's build and run the code to see that everything is working properly (the output has been splitted into different lines for clarity):</p>
+<div class="highlight"><pre><span></span><code>./gradlew run
+
+&gt; Task :run
+FlightDestination<span class="o">(</span><span class="nv">type</span><span class="o">=</span>flight-destination, 
+<span class="nv">origin</span><span class="o">=</span>MAD,
+<span class="nv">destination</span><span class="o">=</span>BIO,
+<span class="nv">departureDate</span><span class="o">=</span>Sat Nov <span class="m">17</span> <span class="m">00</span>:00:00 CET <span class="m">2018</span>,
+<span class="nv">returnDate</span><span class="o">=</span>Wed Nov <span class="m">21</span> <span class="m">00</span>:00:00 CET <span class="m">2018</span>,
+<span class="nv">price</span><span class="o">=</span>FlightDestination.Price<span class="o">(</span><span class="nv">total</span><span class="o">=</span><span class="m">92</span>.26<span class="o">))</span>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: July 1, 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../python-sdk/" title="Python SDK" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Python SDK
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.568ba93b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.2a81e305.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["foo"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

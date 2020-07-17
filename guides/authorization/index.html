@@ -1,0 +1,785 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Amadeus for Developers Documentation">
+      
+      
+        <link rel="canonical" href="https://developers.amadeus.com/guides/authorization/">
+      
+      
+        <meta name="author" content="Amadeus for Developers">
+      
+      <link rel="shortcut icon" href="../../icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Authorization - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.18c0a40a.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.1c8a562c.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amadeus:300,400,400i,700%7CSource+Sans+Pro&display=fallback">
+        <style>body,input{font-family:"Amadeus",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Source Sans Pro",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/amadeus.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#authorization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    <div class="md-container" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://developers.amadeus.com" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/amadeus4dev/developer-guides/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    amadeus4dev/developer-guides
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/first-api-call/" title="Making your first API call" class="md-nav__link">
+      Making your first API call
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/self-service-enterprise/" title="Self-Service vs Enterprise" class="md-nav__link">
+      Self-Service vs Enterprise
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../get-started/moving-to-production/" title="Moving to Production" class="md-nav__link">
+      Moving to Production
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      API Guides
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="API Guides" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        API Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Authorization
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Authorization" class="md-nav__link md-nav__link--active">
+      Authorization
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-oauth" class="md-nav__link">
+    Introduction to OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-flow" class="md-nav__link">
+    Authorization Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-a-token" class="md-nav__link">
+    Requesting a Token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-response" class="md-nav__link">
+    Understanding the Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-token" class="md-nav__link">
+    Using the Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../permissions-and-errors/" title="Permissions and errors" class="md-nav__link">
+      Permissions and errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pagination/" title="Pagination" class="md-nav__link">
+      Pagination
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-rate-limits/" title="Rate Limits" class="md-nav__link">
+      Rate Limits
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-data-collection/" title="Data Collection" class="md-nav__link">
+      Data Collection
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      API Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="API Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        API Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/flights/" title="Flights" class="md-nav__link">
+      Flights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/hotels/" title="Hotels" class="md-nav__link">
+      Hotels
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/locations/" title="Locations" class="md-nav__link">
+      Locations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/predictions/" title="Predictions" class="md-nav__link">
+      Predictions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Tooling
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tooling" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tooling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sdks/node-sdk/" title="Node SDK" class="md-nav__link">
+      Node SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sdks/python-sdk/" title="Python SDK" class="md-nav__link">
+      Python SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sdks/java-sdk/" title="Java SDK" class="md-nav__link">
+      Java SDK
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-oauth" class="md-nav__link">
+    Introduction to OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-flow" class="md-nav__link">
+    Authorization Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-a-token" class="md-nav__link">
+    Requesting a Token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-response" class="md-nav__link">
+    Understanding the Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-token" class="md-nav__link">
+    Using the Token
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/amadeus4dev/developer-guides/edit/master/docs/guides/authorization.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="authorization">Authorization</h1>
+<p>In the following guide you will learn how to perform the authorization needed to access all our APIs.</p>
+<p>The basic steps are:</p>
+<ol>
+<li>Open an account on the <a href="https://developers.amadeus.com/create-account">Amadeus for Developers portal</a></li>
+<li>Create an app</li>
+<li>Get your <code>API Key</code> and <code>API Secret</code></li>
+<li>Make a call to our authorization server to get an access token</li>
+<li>Call the APIs you want using the access token</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please make sure that you do not share your <code>API Key</code> and your <code>API Secret</code> as these are strictly private.</p>
+</div>
+<h2 id="introduction-to-oauth">Introduction to OAuth</h2>
+<p>OAuth is a protocol that enables a token-based workflow, which is more secure
+than basic authentication. It provides a way to ensure that a specific user has
+permissions to access services and resources.</p>
+<p><code>OAuth</code> uses <code>access tokens</code> for accessing APIs. A token represents a
+permission granted to a client to access some protected resources. The method
+to acquire a token is called <strong>grant</strong>.</p>
+<p>There are different types of OAuth grants. <strong>Amadeus for Developers</strong> uses the
+<code>Client Credentials Grant</code>.</p>
+<h2 id="authorization-flow">Authorization Flow</h2>
+<h3 id="requesting-a-token">Requesting a Token</h3>
+<p>To request an access token you need to send a POST request with the following body parameters to the authorization server:</p>
+<ul>
+<li><code>grant_type</code> with the value <code>client_credentials</code></li>
+<li><code>client_id</code> with your <code>API Key</code>.</li>
+<li><code>client_secret</code> with your <code>API Secret</code>.</li>
+</ul>
+<p>There are different content types to send information via POST to the server.
+Our authorization request will be encoded as <code>x-www-form-urlencoded</code>, where the keys
+and values are encoded in key-value tuples separated by '&amp;', with a '=' between
+the key and the value.</p>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>Remember that both <code>API Key</code> and <code>API Secret</code> were provided to you when you created your application in the portal.</p>
+</div>
+<p>Let's use <code>cURL</code> to request a new token. We need to send a <code>POST</code> request to
+the following endpoint <code>/v1/security/oauth2/token</code>. Note that there is no need
+to specify the <code>-X POST</code> parameter as we are sending a body, <code>cURL</code> automatically
+prepares the <code>POST</code>.</p>
+<p>As mentioned, we need to specify the type of the request using the
+<code>content-type</code> HTTP header set to <code>application/x-www-form-urlencoded</code>.</p>
+<div class="highlight"><pre><span></span><code>curl <span class="s2">&quot;https://test.api.amadeus.com/v1/security/oauth2/token&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span> <span class="se">\</span>
+     -d <span class="s2">&quot;grant_type=client_credentials&amp;client_id={client_id}&amp;client_secret={client_secret}&quot;</span>
+</code></pre></div>
+
+<h3 id="understanding-the-response">Understanding the Response</h3>
+<p>The authorization server will respond with a JSON object containing the following properties:</p>
+<ul>
+<li><code>type</code> set to <code>amadeusOAuth2Token</code> string.</li>
+<li><code>username</code> your username (email address).</li>
+<li><code>application_name</code> the name of your application.</li>
+<li><code>client_id</code> your <code>API Key</code> (same as the one used in the request).</li>
+<li><code>token_type</code> with the value <code>Bearer</code>.</li>
+<li><code>access_token</code> your authorization token.</li>
+<li><code>expires_in</code> an integer representing the expiration time (in seconds) of the given token.</li>
+<li><code>state</code> with the value <code>approved</code></li>
+</ul>
+<p>The response will contain the newly generated <code>access_token</code> which you can use to access all resources.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;amadeusOAuth2Token&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;foo@bar.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;application_name&quot;</span><span class="o">:</span> <span class="s2">&quot;BetaTest_foobar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client_id&quot;</span><span class="o">:</span> <span class="s2">&quot;3sY9VNvXIjyJYd5mmOtOzJLuL1BzJBBp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token_type&quot;</span><span class="o">:</span> <span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="o">:</span> <span class="s2">&quot;CpjU0sEenniHCgPDrndzOSWFk5mN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expires_in&quot;</span><span class="o">:</span> <span class="mi">1799</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="o">:</span> <span class="s2">&quot;approved&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="using-the-token">Using the Token</h3>
+<p>Once the token has been retrieved you are ready to perform your API calls.</p>
+<p>To get access to the API you want, you need to add the <code>authorization</code> header
+to your request with the value <code>Bearer {access_token}</code>, where <code>acess_token</code> is
+the token you have just retrieved.</p>
+<p>You can then call, for example, the <code>Check-in Links</code> API to retrieve the
+check-in URL for Iberia (<code>IB</code>):</p>
+<div class="highlight"><pre><span></span><code>curl <span class="s2">&quot;https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airline=1X&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;checkin-link&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1XEN-GBWeb&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;href&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.onex.com/manage/check-in&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;Web&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Although <code>cURL</code> helps to understand how authorization works, we highly
+recommend you use our <a href="https://github.com/amadeus4dev">Amadeus for Developers
+SDKs</a>. The <code>SDKs</code> abstract all the complexity
+of the implementation for you.</p>
+<p>This is how you can initialize the client and authenticate with the Node SDK:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">Amadeus</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;amadeus&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">amadeus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Amadeus</span><span class="p">({</span>
+  <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;[API Key]&#39;</span><span class="p">,</span>
+  <span class="nx">clientSecret</span><span class="o">:</span> <span class="s1">&#39;[API Secret]&#39;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>The <code>SDK</code> fetches and stores the <code>access_token</code> and then sets all the headers automatically in all API calls.</p>
+<p>You can then call for example the Flight Check-in Links API:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">amadeus</span><span class="p">.</span><span class="nx">referenceData</span><span class="p">.</span><span class="nx">urls</span><span class="p">.</span><span class="nx">checkinLinks</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span> <span class="nx">airline</span><span class="o">:</span> <span class="s1">&#39;IB&#39;</span> <span class="p">});</span>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: July 1, 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../get-started/moving-to-production/" title="Moving to Production" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Moving to Production
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../permissions-and-errors/" title="Permissions and errors" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Permissions and errors
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.568ba93b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.2a81e305.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["foo"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
